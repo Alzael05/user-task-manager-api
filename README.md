@@ -19,7 +19,7 @@ A RESTful API for managing users and tasks with JWT authentication and role-base
 - TypeScript
 - TypeORM
 - PostgreSQL (Supabase compatible)
-- LocalStack (S3-compatible storage)
+- Supabase (S3) <s>LocalStack (S3-compatible storage)</s>
 
 ## Features
 
@@ -63,14 +63,14 @@ docker-compose up -d
 This starts:
 
 - PostgreSQL database
-- LocalStack (S3)
+- <s>LocalStack</s> or Supabase (S3)
 - API server
 
 ### 4. Run Locally (Development)
 
 ```bash
 # Start database and LocalStack
-docker-compose up -d db localstack
+# docker-compose up -d db localstack
 
 # Run the API
 npm run start:dev
@@ -98,7 +98,7 @@ http://localhost:3000/api/docs
 | Method | Endpoint     | Description      |
 | ------ | ------------ | ---------------- |
 | GET    | `/users`     | List all users   |
-| GET    | `/users/me`  | Get current user |
+| GET    | `/users/profile`  | Get current user |
 | GET    | `/users/:id` | Get user by ID   |
 | PATCH  | `/users/:id` | Update user      |
 | DELETE | `/users/:id` | Delete user      |
@@ -150,8 +150,7 @@ npm run test:e2e
 | id        | UUID    | Primary key     |
 | email     | VARCHAR | Unique email    |
 | password  | VARCHAR | Hashed password |
-| firstName | VARCHAR | First name      |
-| lastName  | VARCHAR | Last name       |
+| fullName  | VARCHAR | Full Name       |
 | role      | ENUM    | admin/user      |
 | isActive  | BOOLEAN | Account status  |
 

@@ -14,8 +14,7 @@ describe('AuthService', () => {
     id: 'uuid-123',
     email: 'test@example.com',
     password: 'hashedPassword',
-    firstName: 'John',
-    lastName: 'Doe',
+    fullName: 'John Doe',
     role: UserRole.USER,
     isActive: true,
     createdAt: new Date(),
@@ -55,8 +54,7 @@ describe('AuthService', () => {
       const result = await service.register({
         email: 'test@example.com',
         password: 'password123',
-        firstName: 'John',
-        lastName: 'Doe',
+        fullName: 'John Doe',
       });
 
       expect(result.accessToken).toBe('mock-token');
@@ -70,8 +68,7 @@ describe('AuthService', () => {
         service.register({
           email: 'test@example.com',
           password: 'password123',
-          firstName: 'John',
-          lastName: 'Doe',
+          fullName: 'John Doe',
         }),
       ).rejects.toThrow(ConflictException);
     });

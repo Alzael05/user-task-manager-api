@@ -11,20 +11,16 @@ import { UserRole } from '../../users/entities/user.entity';
 export class RegisterDto {
   @ApiProperty({ example: 'john@example.com' })
   @IsEmail()
-  email: string;
+  email!: string;
 
   @ApiProperty({ example: 'securePassword123', minLength: 8 })
   @IsString()
   @MinLength(8)
-  password: string;
+  password!: string;
 
-  @ApiProperty({ example: 'John' })
+  @ApiProperty({ example: 'John Doe' })
   @IsString()
-  firstName: string;
-
-  @ApiProperty({ example: 'Doe' })
-  @IsString()
-  lastName: string;
+  fullName!: string;
 
   @ApiPropertyOptional({ enum: UserRole, default: UserRole.USER })
   @IsOptional()

@@ -37,7 +37,7 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
-  @Get('me')
+  @Get('profile')
   @ApiOperation({ summary: 'Get current user profile' })
   @ApiResponse({ status: 200, description: 'Current user profile' })
   getProfile(@CurrentUser() user: User) {

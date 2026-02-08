@@ -9,12 +9,12 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { TaskStatus, TaskPriority } from '../entities/task.entity';
 
 export class CreateTaskDto {
-  @ApiProperty({ example: 'Complete project documentation' })
+  @ApiProperty({ example: 'Task title' })
   @IsString()
   @MaxLength(255)
   title!: string;
 
-  @ApiPropertyOptional({ example: 'Write comprehensive API documentation' })
+  @ApiPropertyOptional({ example: 'Description of the task' })
   @IsOptional()
   @IsString()
   description?: string;
@@ -29,7 +29,7 @@ export class CreateTaskDto {
   @IsEnum(TaskPriority)
   priority?: TaskPriority;
 
-  @ApiPropertyOptional({ example: '2026-03-01T00:00:00.000Z' })
+  @ApiPropertyOptional({ example: '2026-03-01' })
   @IsOptional()
   @IsDateString()
   dueDate?: string;

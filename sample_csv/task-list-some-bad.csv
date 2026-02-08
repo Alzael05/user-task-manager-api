@@ -1,0 +1,26 @@
+title,description,status,priority,dueDate
+Task 1,Prepare project requirements document,pending,high,2026-03-01
+Task 2,Design database schema,in_progress,high,2026-03-03
+Task 3,Set up development environment,completed,medium,2026-02-20
+Task 4,Implement user authentication,pending,high,2026-03-05
+Task 5,Create task CRUD endpoints,in_progress,high,2026-03-07
+Task 6,Write unit tests for auth module,pending,medium,2026-03-10
+Task 7,Configure CI/CD pipeline,pends,medsm,2026-03-12
+Task 8,Set up PostgreSQL database,completed,medium,2026-02-22
+Task 9,Implement role-based access control,pends,higs2026-03-14
+Task 10,Create API documentation,in_progress,low,2026-03-15
+Task 11,Implement task filtering and sorting,pends,medsm,2026-03-17
+Task 12,Optimize database queries,pends,medsm,2026-03-18
+Task 13,Add pagination support,completed,low,2026-02-25
+Task 14,Implement task due date reminders,pends,lows026-03-20
+Task 15,Set up logging and monitoring,in_progress,medium,2026-03-21
+Task 16,Handle global error responses,pends,medsm,2026-03-22
+Task 17,Write integration tests,pending,medium,2026-03-23
+Task 18,Implement soft delete for tasks,pending,low,2026-03-24
+Task 19,Add task priority validation,completed,low,2026-02-27
+Task 20,Refactor service layer code,in_progress,medium,2026-03-25
+Task 21,Secure API with rate limiting,pending,high,2026-03-26
+Task 22,Prepare deployment configuration,pending,medium,2026-03-27
+Task 23,Deploy API to staging environment,in_progress,high,2026-03-28
+Task 24,Perform load testing,pending,medium,2026-03-29
+Task 25,Final production deployment,pending,high,2026-03-31
