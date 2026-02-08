@@ -12,6 +12,11 @@
 
 A RESTful API for managing users and tasks with JWT authentication and role-based access control.
 
+## Assumptions
+
+- Using S3 as storage is a must. I've used Supabase instead of Localstack (I wasn't able to install localstack on my local)
+- To have a Admin user I've registered first as a "user" then upgrade my account to "admin" directly on the database
+
 ## Tech Stack
 
 - Node.js (LTS)
