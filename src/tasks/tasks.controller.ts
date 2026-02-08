@@ -31,12 +31,6 @@ import { CurrentUser } from '../common/decorators/current-user.decorator';
 import { User } from '../users/entities/user.entity';
 import { CsvUploadService } from './csv-upload.service';
 
-type CsvUploadServiceContract = {
-  processUpload: (
-    file: Express.Multer.File,
-    userId: string,
-  ) => Promise<BulkUploadResponseDto>;
-};
 
 @ApiTags('Tasks')
 @ApiBearerAuth()
@@ -82,8 +76,7 @@ export class TasksController {
     @UploadedFile() file: Express.Multer.File,
     @CurrentUser() user: User,
   ): Promise<BulkUploadResponseDto> {
-    const { processUpload } = this.csvUploadService as CsvUploadServiceContract;
-    return processUpload(file, user.id);
+    return this.csvUploadService.processUpload(file, user.id);
   }
 
   @Get()

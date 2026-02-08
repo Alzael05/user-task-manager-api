@@ -24,8 +24,12 @@ export class StorageService {
       },
       forcePathStyle: true, // Required for LocalStack
     });
+
     this.bucket = this.configService.getOrThrow<string>('s3.bucket');
-    this.ensureBucketExists();
+
+    this.ensureBucketExists().catch((error) => {
+      this.logger.error('Error ensuring S3 bucket exists', error);
+    });
   }
 
   private async ensureBucketExists(): Promise<void> {
@@ -33,8 +37,9 @@ export class StorageService {
       await this.s3Client.send(new HeadBucketCommand({ Bucket: this.bucket }));
     } catch (error) {
       if (
-        error.name === 'NotFound' ||
-        error.$metadata?.httpStatusCode === 404
+        error instanceof Error &&
+        (error.name === 'NotFound' ||
+          (error as any)?.$metadata?.httpStatusCode === 404)
       ) {
         this.logger.log(`Creating bucket: ${this.bucket}`);
         await this.s3Client.send(
