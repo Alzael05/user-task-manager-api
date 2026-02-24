@@ -86,7 +86,7 @@ npm run start:dev
 Swagger documentation is available at:
 
 ```
-http://localhost:3000/api/docs
+http://localhost:3000/api/openapi-yaml
 ```
 
 ## API Endpoints
@@ -100,13 +100,13 @@ http://localhost:3000/api/docs
 
 ### Users (Admin only)
 
-| Method | Endpoint     | Description      |
-| ------ | ------------ | ---------------- |
-| GET    | `/users`     | List all users   |
-| GET    | `/users/profile`  | Get current user |
-| GET    | `/users/:id` | Get user by ID   |
-| PATCH  | `/users/:id` | Update user      |
-| DELETE | `/users/:id` | Delete user      |
+| Method | Endpoint         | Description      |
+| ------ | ---------------- | ---------------- |
+| GET    | `/users`         | List all users   |
+| GET    | `/users/profile` | Get current user |
+| GET    | `/users/:id`     | Get user by ID   |
+| PATCH  | `/users/:id`     | Update user      |
+| DELETE | `/users/:id`     | Delete user      |
 
 ### Tasks
 
@@ -150,14 +150,14 @@ npm run test:e2e
 
 ### Users
 
-| Column    | Type    | Description     |
-| --------- | ------- | --------------- |
-| id        | UUID    | Primary key     |
-| email     | VARCHAR | Unique email    |
-| password  | VARCHAR | Hashed password |
-| fullName  | VARCHAR | Full Name       |
-| role      | ENUM    | admin/user      |
-| isActive  | BOOLEAN | Account status  |
+| Column   | Type    | Description     |
+| -------- | ------- | --------------- |
+| id       | UUID    | Primary key     |
+| email    | VARCHAR | Unique email    |
+| password | VARCHAR | Hashed password |
+| fullName | VARCHAR | Full Name       |
+| role     | ENUM    | admin/user      |
+| isActive | BOOLEAN | Account status  |
 
 ### Tasks
 

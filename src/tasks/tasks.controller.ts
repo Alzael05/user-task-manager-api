@@ -31,7 +31,6 @@ import { CurrentUser } from '../common/decorators/current-user.decorator';
 import { User } from '../users/entities/user.entity';
 import { CsvUploadService } from './csv-upload.service';
 
-
 @ApiTags('Tasks')
 @ApiBearerAuth()
 @UseGuards(JwtAuthGuard)

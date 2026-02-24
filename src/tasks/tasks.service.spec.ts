@@ -67,6 +67,7 @@ describe('TasksService', () => {
       );
 
       expect(result).toEqual(mockTask);
+      // eslint-disable-next-line @typescript-eslint/unbound-method
       expect(repository.create).toHaveBeenCalledWith({
         title: 'Test Task',
         description: 'Test Description',

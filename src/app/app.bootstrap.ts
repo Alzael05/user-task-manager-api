@@ -50,7 +50,7 @@ export async function createApp(): Promise<NestExpressApplication> {
     .build();
 
   const document = SwaggerModule.createDocument(app, openApiSpecs);
-  SwaggerModule.setup(`/docs`, app, document, {
+  SwaggerModule.setup(`/openapi`, app, document, {
     useGlobalPrefix: true,
   });
 
